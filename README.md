@@ -1,10 +1,10 @@
-# 🛡️ Phishing Shield (Browser Extension + Local ML)
+# Phishing Shield (Browser Extension + Local ML)
 
 An advanced, real-time Phishing Detection system. It uses a **Local Random Forest AI Model** to analyze text and a **Browser Extension** that actively scans webpages for structural threats (like fake login forms and masked links).
 
 ---
 
-## 🚀 Easy Installation Guide
+## Easy Installation Guide
 
 Because this project includes both a Machine Learning backend and a custom Browser Extension, installation is split into two easy steps.
 
@@ -36,7 +36,7 @@ You don't need to download this from the Chrome Web Store. You can load it direc
 
 ---
 
-## 💡 How to Use It
+## How to Use It
 
 This extension offers two layers of protection:
 
