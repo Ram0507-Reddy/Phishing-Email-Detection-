@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Shield (Local ML)",
+  "version": "1.0",
+  "description": "Analyzes the current page text using a local scikit-learn model to detect phishing attempts in real-time.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["auto_scan.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

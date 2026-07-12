@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Shield</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 320px;
+            margin: 0;
+            padding: 15px;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        .btn-scan {
+            width: 100%;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .btn-scan:hover {
+            background-color: #2563eb;
+        }
+        #loader {
+            display: none;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        #result-box {
+            display: none;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .status {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .safe {
+            color: #10b981;
+        }
+        .phishing {
+            color: #ef4444;
+        }
+        .confidence {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        .detail-label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #475569;
+            margin-top: 10px;
+            margin-bottom: 3px;
+        }
+        .detail-content {
+            font-size: 0.8rem;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h2>🛡️ Phishing Shield</h2>
+    <p style="font-size: 0.85rem; color: #64748b; margin-top: 0;">Scan the current page for phishing threats using ML.</p>
+    
+    <button id="scanBtn" class="btn-scan">Scan Current Page</button>
+    <div id="loader">Scanning content with local ML model...</div>
+    
+    <div id="result-box">
+        <div id="status" class="status"></div>
+        <div id="confidence" class="confidence"></div>
+        
+        <div class="detail-label">Structural Threats:</div>
+        <div id="structural-threats" class="detail-content" style="color: #ef4444; font-weight: bold;"></div>
+        
+        <div class="detail-label">Suspicious Keywords:</div>
+        <div id="keywords" class="detail-content"></div>
+        
+        <div class="detail-label">Extracted URLs:</div>
+        <div id="urls" class="detail-content" style="max-height: 60px; overflow-y: auto;"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
